@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,li{
+            list-style: none;
+        }
+
+        ul>li {
+            border: 1px solid;
+            width: 60px;
+        }
+
+        ul>li li {
+            border: 1px solid;
+            width: 80px;
+        }
+
+        .extender1,.extender2,.extender3 {
+            margin-left: -40px;
+            display: none;
+        }
+
+        ul > li {
+            position: relative;
+            display: inline-block;
+        }
+
+        ul>li:hover > .extender1 {
+            position: absolute;
+            display: block;
+        }
+
+        ul>li:hover {
+            background-color: yellow;
+        }
+
+        .extender1 > li {
+            position: relative;
+            display: inline-block;
+    
+        }
+
+        .extender1 > li:hover .extender2 {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 80px;
+        }
+
+        .extender3 > li {
+            position: relative;
+            display: inline-block;
+        }
+
+        .extender2 > li:hover .extender3 {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 80px;
+        }
+        
+    
+
+    </style>
+
+</head>
+
+<body>
+    <ul>
+        <li>
+            文件
+            <ul class="extender1">
+                <li>
+                    保存
+                    <ul class="extender2">
+                        <li>保存到桌面</li>
+                        <li>
+                            保存到C盘
+                            <ul class="extender3">
+                                <li>aaa</li>
+                                <li>bbb</li>
+                            </ul>
+                        </li>
+                        <li>保存到D盘</li>
+                    </ul>
+                </li>
+                <li>
+                    打开
+                </li>
+                <li>
+                    另存为...   >
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            编辑
+            <ul class="extender1">
+                <li>
+                    保存
+                    <ul class="extender2">
+                        <li>保存到桌面</li>
+                        <li>保存到C盘</li>
+                        <li>保存到D盘</li>
+                    </ul>
+                </li>
+                <li>
+                    打开
+                </li>
+                <li>
+                    另存为... >
+                </li>
+            </ul>
+        </li>
+
+
+        <li>
+            视图
+            <ul class="extender1">
+                <li>
+                    保存
+                </li>
+                <li>
+                    打开
+                </li>
+                <li>
+                    另存为... >
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
