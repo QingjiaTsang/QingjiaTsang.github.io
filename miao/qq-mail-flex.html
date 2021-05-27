@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        html,body {
+            height: 100%;
+        }
+
+        section {
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .top {
+            background-color: lightblue;
+            height: 100px;
+            width: 100%;
+        }
+
+        .left {
+            background-color: lightsalmon;
+            height: 100%;
+            width: 130px;
+            /* flex-direction: column; */
+            
+        }
+
+        .main {
+            background-color: yellowgreen;
+            height: 100%;
+            width: 200px;
+            /* width: calc(100vw - 130px); */
+
+            flex-grow: 1;
+            
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="top">abc</div>
+
+
+        <div class="left">
+            aaa
+        </div>
+        
+        <div class="main">Lorem ipsum dolor sit, amet consectetur adipisicing elit. At debitis officiis minima eaque reiciendis
+            dolor illum! Facilis, quaerat aperiam. Animi tempora est dolorum eaque totam similique commodi consectetur
+            repellendus et.</div>
+
+
+        
+    </section>
+
+</body>
+</html>
