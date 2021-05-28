@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'MiIconFont';
+    src: url('./小米图标库.woff') format("woff");
+    font-weight:400;
+}
+
+.icon {
+  font-size:2em;
+  font-family: MiIconFont;
+}
+
+.iconfont-tool::before {
+  content: '\E634'
+}
+
+.iconfont-circle-7::before {
+    content: "\E635";
+}
+
+.iconfont-circle-15::before {
+    content: "\E636";
+}
+
+.iconfont-gift::before {
+    content: "\E638";
+}
+
+.iconfont-location::before {
+    content: "\E637";
+}
