@@ -28,3 +28,14 @@
 .iconfont-location::before {
     content: "\E637";
 }
+
+.iconfont-cart::before {
+    content: "\E60C";
+}
+
+.iconfont-SearchBtn::before{
+    content: "\E616";
+}
+.iconfont-arrow-right-big::before {
+    content: "\E623";
+}

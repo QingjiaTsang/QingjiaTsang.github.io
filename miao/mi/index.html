@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./MiFontIcon.css">
+
+    <style>
+        html {
+            min-width: 1226px;
+        }
+
+        body {
+            margin: 0;
+            font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        .Top_Big_Wrapper {
+            background-color: white;
+        }
+
+        .TopBannerWrapper {
+            width: max-content;
+            background-color: #333;
+            width: 100%;
+            height: 40px;
+            border: 1px solid;
+            box-sizing: border-box;
+            line-height: 40px;
+        }
+
+
+        .header {
+            width: 1226px;
+            margin: 0 auto;
+            display: flex;
+
+        }
+
+        /* .header_1,
+        .header_2,
+        .cart {
+            display: inline-block;
+        } */
+
+        .header_1 {
+            float: left;
+        }
+
+        .header_2 {
+            float: left;
+        }
+
+        .cart {
+            float: left;
+            padding: 0 20px;
+
+        }
+
+
+        .sep {
+            margin: 0 .3em;
+            color: #424242;
+        }
+
+        .header_1 a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .header_2 a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .cart span {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .header_2+a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 0 5px;
+        }
+
+        .header_2 {
+            padding-left: 150px;
+        }
+
+        .cart {
+            position: relative;
+        }
+
+        .cart_ext {
+            background-color: rgb(255, 255, 255);
+            border: 2px solid;
+            border-top: none;
+            width: 400px;
+            height: 127px;
+            position: absolute;
+            visibility: hidden;
+            right: 0;
+            transition: 1s;
+            opacity: 0;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .cart_ext p {
+            padding-top: 30px;
+        }
+
+        .cart>span:hover+.cart_ext {
+            visibility: visible;
+            opacity: 1;
+            transition: 1s;
+            z-index: 18;
+            ;
+        }
+
+        .cart_ext:hover {
+            visibility: visible;
+            opacity: 1;
+        }
+
+
+
+        .TopNavWrapper {
+            width: 100%;
+        }
+
+        .TopNav {
+            width: 1226px;
+            height: 110px;
+            margin: 0 auto;
+            padding-top: 12px;
+        }
+
+        .TopNav_MiLogo {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .TopNav_MiLogo img {
+            width: 56px;
+        }
+
+        .TopNav_1 {
+            padding-left: 12px;
+            /* padding-right: 30px; */
+            margin: 0;
+            box-sizing: border-box;
+            /* float: right; */
+
+        }
+
+        .TopNav_1,
+        .TopNav_1 li {
+            display: inline-block;
+        }
+
+        .TopNav_1>li {
+            padding: 26px 10px 38px;
+            vertical-align: middle;
+            font-size: 16px;
+        }
+
+        .TopNav_1>li:nth-of-type(1) {
+            width: 130px;
+            /* height: 88px; */
+            padding: 0 15px 0 0;
+
+        }
+
+        /* .TopNav_1 {
+            position: relative;
+        }
+
+        .SearchboxWrapper_of_li {
+            position: absolute;
+            right: -373px;
+            top: -10px;
+        } */
+
+        .SearchboxWrapper {
+            display: inline-block;
+            width: 295px;
+            height: 50px;
+        }
+
+        .Searchbox {
+            box-sizing: border-box;
+            height: 100%;
+            width: 245px;
+            border: 1px solid #e0e0e0;
+            box-sizing: border-box;
+            float: left;
+            display: inline-block;
+        }
+
+        .iconfont-SearchBtn {
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #e0e0e0;
+            background-color: white;
+            float: left;
+            border-left: none;
+        }
+
+
+
+
+
+        .TopNavWrapper {
+            position: relative;
+        }
+
+        .TopNav_Ext_Wrapper {
+            position: absolute;
+            width: 100%;
+            top: 90%;
+            left: 0;
+            visibility: hidden;
+            height: 0;
+            z-index: 60;
+            background-color: white;
+        }
+
+        .TopNav_folder:hover>.TopNav_Ext_Wrapper {
+            visibility: visible;
+            height: 110px;
+            padding-top: 45px;
+            padding-bottom: 80px;
+            /* display: block; */
+        }
+
+        .TopNav_Ext_Wrapper>ul {
+            width: 1226px;
+            margin: 0 auto;
+        }
+
+        .TopNav_folder:hover,
+        .TopNav_Last_Two:hover>a {
+            color: orangered;
+            cursor: pointer;
+        }
+
+        .TopNav_Last_Two>a {
+            text-decoration: none;
+            color: black;
+        }
+
+
+
+        .TopNav_folder:hover>.TopNav_Ext_Wrapper {
+            border-top: 1px solid #e0e0e0;
+            box-shadow: 0 0.5px rgb(223, 223, 223);
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .TopNav_Ext_Wrapper>ul>li>img {
+            width: 160px;
+            height: 110px;
+            border-right: 1px solid rgb(224, 224, 224);
+        }
+
+        .TopNav_Ext_Wrapper>ul>li:nth-last-of-type(1)>img {
+            border-right: none;
+        }
+
+        .Product_name {
+            color: black;
+            line-height: 40px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .Price {
+            margin-top: -15px;
+            line-height: 20px;
+            color: #ff6700;
+            font-size: 12px;
+            text-align: center;
+        }
+
+
+
+        .Slideshow_Wrapper {
+            width: 100%;
+        }
+
+        .Slideshow_box {
+            width: 1226px;
+            margin: 0 auto;
+        }
+
+
+
+        div.imgWrapper {
+            height: 460px;
+            width: 1226px;
+            /* border: 1px solid; */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .imgWrapper img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            transition: 1s;
+            animation: move 1s;
+        }
+
+        @keyframes move {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+
+        .Slideshow_box>input:nth-of-type(1):checked~.imgWrapper>img:nth-of-type(1),
+        .Slideshow_box>input:nth-of-type(2):checked~.imgWrapper>img:nth-of-type(2),
+        .Slideshow_box>input:nth-of-type(3):checked~.imgWrapper>img:nth-of-type(3),
+        .Slideshow_box>input:nth-of-type(4):checked~.imgWrapper>img:nth-of-type(4) {
+            left: 0;
+            animation: none;
+            z-index: 10;
+        }
+
+        .Slideshow_box>input:nth-of-type(1):checked~.imgWrapper>.labels>label:nth-of-type(1),
+        .Slideshow_box>input:nth-of-type(2):checked~.imgWrapper>.labels>label:nth-of-type(2),
+        .Slideshow_box>input:nth-of-type(3):checked~.imgWrapper>.labels>label:nth-of-type(3),
+        .Slideshow_box>input:nth-of-type(4):checked~.imgWrapper>.labels>label:nth-of-type(4) {
+            background: hsla(0, 0%, 100%, .4);
+            border-color: rgba(0, 0, 0, .4);
+        }
+
+        .labels {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            z-index: 50;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .labels>label {
+            width: 6px;
+            height: 6px;
+            border: 2px solid #fff;
+            border-color: hsla(0, 0%, 100%, .3);
+            background: rgba(0, 0, 0, .4);
+            border-radius: 9999px;
+            margin: 0 4px;
+        }
+
+        .labels>label:hover {
+            background: hsla(0, 0%, 100%, .4);
+            border-color: rgba(0, 0, 0, .4);
+        }
+
+        input {
+            display: none;
+        }
+
+        .label-left,
+        .label-right {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 50;
+        }
+
+        .label-right {
+            right: 0;
+        }
+
+        .label-left>label {
+            box-sizing: border-box;
+            width: 41px;
+            height: 69px;
+            display: none;
+            background-image: url(https://i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png);
+            background-position: -84px 50%;
+            margin-left: 234px;
+        }
+
+        .label-left>label:hover {
+            background-position: 0 50%;
+        }
+
+        .label-right>label {
+            box-sizing: border-box;
+            width: 41px;
+            height: 69px;
+            display: none;
+            background-image: url(https://i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png);
+            background-position: -125px 50%;
+        }
+
+        .label-right>label:hover {
+            background-position: -42px 50%;
+        }
+
+
+        .Slideshow_box>input:nth-of-type(1):checked~.imgWrapper>.label-left [for="img4"],
+        .Slideshow_box>input:nth-of-type(2):checked~.imgWrapper>.label-left [for="img1"],
+        .Slideshow_box>input:nth-of-type(3):checked~.imgWrapper>.label-left [for="img2"],
+        .Slideshow_box>input:nth-of-type(4):checked~.imgWrapper>.label-left [for="img3"] {
+            display: block;
+        }
+
+        .Slideshow_box>input:nth-of-type(1):checked~.imgWrapper>.label-right [for="img2"],
+        .Slideshow_box>input:nth-of-type(2):checked~.imgWrapper>.label-right [for="img3"],
+        .Slideshow_box>input:nth-of-type(3):checked~.imgWrapper>.label-right [for="img4"],
+        .Slideshow_box>input:nth-of-type(4):checked~.imgWrapper>.label-right [for="img1"] {
+            display: block;
+        }
+
+        .Slideshow_box {
+            position: relative;
+        }
+
+        .Left_Nav_Wrapper {
+            position: absolute;
+            top: 0;
+            z-index: 51;
+            width: 234px;
+            height: 460px;
+            box-sizing: border-box;
+        }
+
+        .Left_Nav>ul {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            box-sizing: border-box;
+            font-size: 16px;
+            line-height: 16px;
+            background: rgba(105, 101, 101, .6);
+        }
+
+        .Left_Nav>ul>li {
+            list-style: none;
+            width: 234px;
+            line-height: 42px;
+            box-sizing: border-box;
+            /* position: relative; */
+
+        }
+
+        .Left_Nav>ul>li>a {
+            text-decoration: none;
+            color: white;
+            height: 100%;
+            width: 100%;
+            padding-left: 30px;
+            display: inline-block;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .Left_Nav>ul>li::after {
+            font-size: 16px;
+            font-family: MiIconFont;
+            content: "\E623";
+            color: #e0e0e0;
+            position: absolute;
+            right: 20px;
+        }
+
+
+        .Left_Nav {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .Left_Nav_Ext {
+            width: 1060px;
+            height: 458px;
+            position: absolute;
+            top: 0px;
+            left: 100%;
+            border: 1px solid #e0e0e0;
+            background: #fff;
+            border-left: 0;
+            box-shadow: 0 8px 16px rgb(0 0 0 / 18%);
+            display: none;
+        }
+
+
+        .Left_Nav_Folder:hover .Left_Nav_Ext {
+            display: block;
+        }
+
+        .Left_Nav_Folder:hover {
+            background-color: #ff6700;
+        }
+
+
+        .Left_Nav_Ext>ul {
+            width: 100%;
+            height: 100%;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .Left_Nav_Ext>ul>li {
+            list-style: none;
+            width: 265px;
+            height: 76px;
+            box-sizing: border-box;
+        }
+
+        .Left_Nav_Ext_alink {
+            height: 100%;
+            width: 100%;
+            display: block;
+            padding: 18px 20px;
+            line-height: 40px;
+            text-decoration: none;
+            color: black;
+            box-sizing: border-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .Left_Nav_Ext_alink:hover>.Left_Nav_Ext_text {
+            color: #ff6700;
+        }
+
+        .Left_Nav_Ext_imgs {
+            height: 40px;
+            width: 40px;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+
+        .Left_Nav_Ext_text {
+            width: 172px;
+            line-height: 40px;
+            font-size: 14px;
+        }
+
+        .Top_last_row_Wrapper {
+            width: 100%;
+            height: 170px;
+            margin-top: 20px;
+            margin-bottom: 26px;
+        }
+
+        .Top_last_row {
+            width: 1226px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between !important;
+            justify-content: flex-start;
+        }
+
+        .Top_last_row_P1 {
+            width: 234px;
+            height: 170px;
+            padding: 3px;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            background: #5f5750;
+            font-size: 12px;
+            justify-content: flex-start;
+
+        }
+
+        .Top_last_row_P1>div {
+            height: 82px;
+            width: 76px;
+            padding: 0 3px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .Top_last_row_P1>div>a {
+            display: block;
+            width: 70px;
+            height: 45.6px;
+            padding-top: 18px;
+            color: #fff;
+            text-overflow: ellipsis;
+            opacity: .7;
+            transition: .2s;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        .Top_last_row_P1>div>a:hover {
+            opacity: 1;
+
+        }
+
+        .Top_last_row_P1>div img {
+            display: block;
+            width: 24px;
+            height: 24px;
+            margin: 0 auto 4px;
+            box-sizing: border-box;
+        }
+
+        .Top_last_row_P1>div {
+            position: relative;
+        }
+
+        .Top_last_row_P1>div::before,
+        .Top_last_row_P1>div::after {
+            position: absolute;
+            content: "";
+            background: #665e57;
+        }
+
+        .Top_last_row_P1>div::after {
+            top: 6px;
+            left: 0;
+            width: 1px;
+            height: 70px;
+        }
+
+        .Top_last_row_P1>div::before {
+            top: -1px;
+            left: 6px;
+            width: 64px;
+            height: 1px;
+        }
+
+
+
+
+
+        .Top_last_row_P2>a,
+        .Top_last_row_P3>a,
+        .Top_last_row_P4>a {
+            width: 316px;
+            height: 170px;
+            display: block;
+        }
+
+        .Top_last_row_P2 img,
+        .Top_last_row_P3 img,
+        .Top_last_row_P4 img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .SecScreen {
+            background: #f5f5f5;
+        }
+
+        .XiaomimiaoshaWrapper {
+            width: 100%;
+        }
+
+        .Xiaomimiaosha,
+        .ShoujiPartWrapper {
+            width: 1226px;
+            margin: 0 auto;
+        }
+
+        .Title_Xiaomimiaosha,
+        .Title_Shouji {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 200;
+            line-height: 58px;
+            color: #333;
+            line-height: 57.6px;
+        }
+
+        .miaoshaWrapper {
+            display: flex;
+
+        }
+
+        .miaosha_Time {
+            height: 340px;
+            width: 234px;
+            padding-top: 39px;
+            border-top: 1px solid red;
+            background: #f1eded;
+            text-align: center;
+            padding-top: 39px;
+            box-sizing: border-box;
+        }
+
+        .miaosha_Scroll {
+            width: 978px;
+            height: 340px;
+            margin-left: 14px;
+            border: 1px solid;
+        }
+
+        .Ads_Note9>a {
+            display: block;
+            width: 1226px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .Ads_Note9 img {
+            width: 100%;
+        }
+
+        .shoujiWrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .shoujiWrapper>div:nth-of-type(1) {
+            width: 234px;
+            height: 614px;
+        }
+
+        .shoujiWrapper a {
+            display: block;
+            height: 100%;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .shoujiWrapper>div:nth-of-type(1) img {
+            height: 100%;
+            width: 100%;
+        }
+
+
+        .Shouji_content_Wrapper {
+            width: 234px;
+            height: 300px;
+            padding-top: 20px;
+            margin: 0 0 14px 14px;
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+
+        .Shouji_content_Wrapper>a>img {
+            display: block;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 18px;
+        }
+
+        .Shouji_name,
+        .Shouji_intro,
+        .Shouji_price {
+            text-align: center;
+
+        }
+
+        .Shouji_name {
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+            margin: 0 10px 2px;
+        }
+
+        .Shouji_intro {
+            text-align: center;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 0 10px 10px;
+            height: 18px;
+            font-size: 12px;
+            color: #b0b0b0;
+        }
+
+        .Shouji_price {
+            color: #ff6700;
+            margin: 0 10px 14px;
+        }
+
+        .ShoujiRight {
+            height: 614px;
+            width: 992px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="Top_Big_Wrapper">
+        <div class="TopBannerWrapper">
+            <header class="header">
+                <div class="header_1">
+                    <a href="">小米商城</a>
+                    <span class="sep">|</span>
+                    <a href="">MIUI</a>
+                    <span class="sep">|</span>
+                    <a href="">loT</a>
+                    <span class="sep">|</span>
+                    <a href="">云服务</a>
+                    <span class="sep">|</span>
+                    <a href="">天星数科</a>
+                    <span class="sep">|</span>
+                    <a href="">有品</a>
+                    <span class="sep">|</span>
+                    <a href="">小爱开放平台</a>
+                    <span class="sep">|</span>
+                    <a href="">企业团购</a>
+                    <span class="sep">|</span>
+                    <a href="">资质证照</a>
+                    <span class="sep">|</span>
+                    <a href="">协议规则</a>
+                    <span class="sep">|</span>
+                    <a href="">下载app</a>
+                    <span class="sep">|</span>
+                    <a href="">智能生活</a>
+                    <span class="sep">|</span>
+                    <a href="">Select Location</a>
+
+                </div>
+
+                <div class="header_2">
+                    <a href="">登录</a>
+                    <span class="sep">|</span>
+                    <a href="">注册</a>
+                    <span class="sep">|</span>
+                    <a href="">消息通知</a>
+                </div>
+
+                <div class="cart">
+                    <span class="icon iconfont-cart">购物车(0)</span>
+                    <div class="cart_ext">
+                        <p>购物车中还没有商品</p>
+                    </div>
+                </div>
+
+            </header>
+        </div>
+
+        <div class="TopNavWrapper">
+            <div class="TopNav">
+                <div class="TopNav_MiLogo">
+                    <a href="https://www.mi.com/index.html">
+                        <img src=".//图片/logo-mi2.png" alt="MiLogo">
+                    </a>
+                </div>
+
+                <ul class="TopNav_1">
+                    <li>
+
+                    </li>
+                    <li class="TopNav_folder">
+                        小米手机
+                        <div class="TopNav_Ext_Wrapper">
+                            <ul>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/85e44ea2405ff8414148bbde7446b137.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                    <div class="Product_name">
+                                        <div>小米MIX FOLD</div>
+                                    </div>
+                                    <p class="Price">9999元起</p>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1a359e9346e3c6ee8c9d8389e3fd9458.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                    <div class="Product_name">小米11 Ultra</div>
+                                    <p class="Price">9999元起</p>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a1c45eadcedeb27b1cafca0359422da9.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                    <div class="Product_name">小米11 Pro</div>
+                                    <p class="Price">9999元起</p>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/56e3379b5422cb06e5c8a0c546445606.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                    <div class="Product_name">小米11 青春版</div>
+                                    <p class="Price">9999元起</p>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecebd50c7840bb03d7b5e3bfe4d439c2.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                    <div class="Product_name">小米10s</div>
+                                    <p class="Price">9999元起</p>
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/584add2c9cfdb9eefe7b642bf191773a.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                    <div class="Product_name">小米11</div>
+                                    <p class="Price">9999元起</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="TopNav_folder">
+                        Redmi红米
+                        <div class="TopNav_Ext_Wrapper">
+                            <ul>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e3c5d99c28700a3c45ea65eebbea0a04.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/88bb84ff06f0ab467b859aeed36b817a.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/acd0f27496ccdf81ef42124c35e8bfc4.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d07671f25a2b3a6c3d4fac189f28fbe9.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f9149ef3ba2c9025a4a21c98ae793808.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/963679eaf3937351e154600ab3448460.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="TopNav_folder">
+                        电视
+                        <div class="TopNav_Ext_Wrapper">
+                            <ul>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8c87fdc4bcfd081ac240f7af1417ce60.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/174a2f9256a44b98f9e08bbe30528329.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e513ac03d0ebb594bf42f7d6b1b44944.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/932b583c6eccd8aabfa0771f8a854940.jpg?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ea3390a20547c7298a258528e4aa69ad.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0112cb7e2ea8489fbd36ce3a781d5232.jpg?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="TopNav_folder">
+                        笔记本
+                        <div class="TopNav_Ext_Wrapper">
+                            <ul>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/37fcbe3b823c837b6ffe7f59f7aa579e.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/789c69b743d9c46a39dd179cefdbce7c.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9ef482fe00cdcb7294e4029543ca9b9b.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/705cde5b7afce7ee89d95d1a35938778.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7872a4195d666f08bef0877562dd7fe7.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/95abdace7ad322e6237c98a61d967774.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="TopNav_folder">
+                        家电
+                        <div class="TopNav_Ext_Wrapper">
+                            <ul>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b7a4e3ff7919ca2407ad970b78abd09a.jpg?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/65df9e92c06dcd148de5f0eb13e16ea2.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/11b8bca444aba2994fe852993eac9203.png?thumb=1&w=200&h=138"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c82798dbbc793c8bd52929dbe86b316f.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/48d69ed4cc41d5c9d33bdeefd7f1da69.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/40ad6e8398095e97309a5538b516a2de.jpg?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="TopNav_folder">
+                        路由器
+                        <div class="TopNav_Ext_Wrapper">
+                            <ul>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2a759fa795d749f0538cfd2a15890027.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/54de949334c3d794a6ca55b76e4bb379.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2815a0a208be362cba673aae9a1f9c93.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/27da43294889d049a111e5ff2cdfafe7.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/359d3c63cc159949d8fe147a11b4bc40.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/aa1e0a4860cf40d34e1192d86691c82c.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="TopNav_folder">
+                        智能硬件
+                        <div class="TopNav_Ext_Wrapper">
+                            <ul>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2b87ae4a36beef69bb2018eb1f8bce9b.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9c6a5f44fd12afa182367ed8d1716421.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f6e585a4bf5c0f744ca60f19ecd6fadf.jpg?thumb=1&w=200&h=138"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/17c0c91317ec0def3ecc072fa9480192.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                                <li>
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/12cdacc6e4f343861d31345036cc3b46.png?thumb=1&w=200&h=138&f=webp&q=90"
+                                        alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="TopNav_Last_Two">
+                        <a href="">服务</a>
+                    </li>
+                    <li class="TopNav_Last_Two">
+                        <a href="">社区</a>
+                    </li>
+                    <li class="SearchboxWrapper_of_li">
+                        <form class="SearchboxWrapper" action="#ffasad">
+                            <input class="Searchbox" type="text" name="" id="">
+                            <button class="icon iconfont-SearchBtn"></button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="Slideshow_Wrapper">
+            <div class="Slideshow_box">
+                <input type="radio" name="imgs" id="img1" checked>
+                <input type="radio" name="imgs" id="img2">
+                <input type="radio" name="imgs" id="img3">
+                <input type="radio" name="imgs" id="img4">
+                <div class="imgWrapper">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7abb68ac50f82412d325f305cc62fb0.jpeg?w=2452&h=920"
+                        alt="">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/320dd6910da4ad8e479fc235ee9696b8.jpg?thumb=1&w=1379&h=518&f=webp&q=90"
+                        alt="">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bbcd4ba87a306e51f033f80d7ed65cce.jpg?thumb=1&w=1379&h=518&f=webp&q=90"
+                        alt="">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1c3e97686468231f3f78048d7f2b7fdc.jpg?thumb=1&w=1379&h=518&f=webp&q=90"
+                        alt="">
+                    <div class="labels">
+                        <label for="img1"></label>
+                        <label for="img2"></label>
+                        <label for="img3"></label>
+                        <label for="img4"></label>
+                    </div>
+                    <div class="label-left">
+                        <label for="img1"></label>
+                        <label for="img2"></label>
+                        <label for="img3"></label>
+                        <label for="img4"></label>
+                    </div>
+                    <div class="label-right">
+                        <label for="img1"></label>
+                        <label for="img2"></label>
+                        <label for="img3"></label>
+                        <label for="img4"></label>
+                    </div>
+                </div>
+                <div class="Left_Nav_Wrapper">
+                    <div class="Left_Nav">
+                        <ul>
+                            <li class="Left_Nav_Folder">
+                                <a href="https://www.mi.com/p/1915.html">手机
+                                    电话卡</a>
+                                <div class="Left_Nav_Ext">
+                                    <ul>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="Left_Nav_Folder">
+                                <a href="https://www.mi.com/a/h/9819.html">电视 盒子</a>
+                                <div class="Left_Nav_Ext">
+                                    <ul>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9074723edc522839834f7fcd12b6f558.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">Redmi MAX 86” 超大屏电视</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9d649ec3d7d14da7090e396d56b7cc92.jpg?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">Redmi 智能电视 MAX 98"</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9d649ec3d7d14da7090e396d56b7cc92.jpg?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">Redmi 智能电视 MAX 98"</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9d649ec3d7d14da7090e396d56b7cc92.jpg?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">Redmi 智能电视 MAX 98"</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9074723edc522839834f7fcd12b6f558.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">Redmi MAX 86” 超大屏电视</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9d649ec3d7d14da7090e396d56b7cc92.jpg?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">Redmi 智能电视 MAX 98"</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9d649ec3d7d14da7090e396d56b7cc92.jpg?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">Redmi 智能电视 MAX 98"</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9d649ec3d7d14da7090e396d56b7cc92.jpg?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">Redmi 智能电视 MAX 98"</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="Left_Nav_Folder">
+                                <a href="https://www.mi.com/a/h/7529.html">笔记本 显示器</a>
+                                <div class="Left_Nav_Ext">
+                                    <ul>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ac38f4abb13391b5f254cd47aebb55bb.png?thumb=1&w=50&h=50&f=webp&q=90 "
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">RedmiBook Pro 14 锐龙版</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="Left_Nav_Folder">
+                                <a href="https://www.mi.com/p/9285.html">家电 排线版</a>
+                                <div class="Left_Nav_Ext">
+                                    <ul>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/abeb200aaaee68d4635c6235d3ffb3f3.jpg?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">冰箱</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/abeb200aaaee68d4635c6235d3ffb3f3.jpg?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">冰箱</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/abeb200aaaee68d4635c6235d3ffb3f3.jpg?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">冰箱</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/abeb200aaaee68d4635c6235d3ffb3f3.jpg?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">冰箱</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/abeb200aaaee68d4635c6235d3ffb3f3.jpg?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">冰箱</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="Left_Nav_Folder">
+                                <a href="https://www.mi.com/p/9289.html">出行 穿戴</a>
+                                <div class="Left_Nav_Ext">
+                                    <ul>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/baba53e0cfd7bf0958edd84f8c5fcbbb.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米手环6 NFC版</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="Left_Nav_Folder">
+                                <a href="https://www.mi.com/a/h/8363.html">智能 路由器</a>
+                                <div class="Left_Nav_Ext">
+                                    <ul>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="Left_Nav_Folder">
+                                <a href="https://www.mi.com/p/9290.html">电源 配件</a>
+                                <div class="Left_Nav_Ext">
+                                    <ul>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="Left_Nav_Folder">
+                                <a href="https://www.mi.com/p/9291.html">健康儿童</a>
+                                <div class="Left_Nav_Ext">
+                                    <ul>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="Left_Nav_Folder">
+                                <a href="https://www.mi.com/p/9292.html">耳机 音响</a>
+                                <div class="Left_Nav_Ext">
+                                    <ul>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="Left_Nav_Folder">
+                                <a href="https://www.mi.com/buy?product_id=11674">生活 箱包</a>
+                                <div class="Left_Nav_Ext">
+                                    <ul>
+                                        <li>
+                                            <a class="Left_Nav_Ext_alink" href="https://www.mi.com/mixfold">
+                                                <img class="Left_Nav_Ext_imgs"
+                                                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab345272bf9894bb8269d4901344b068.png?thumb=1&w=50&h=50&f=webp&q=90"
+                                                    alt="">
+                                                <span class="Left_Nav_Ext_text">小米MIX FOLD</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Top_last_row_Wrapper">
+            <div class="Top_last_row">
+                <div class="Top_last_row_P1">
+                    <div>
+                        <a target="_blank" href="https://www.mi.com/buy/seckill">
+                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/82abdba456e8caaea5848a0cddce03db.png?w=48&h=48"
+                                alt="">
+                            小米秒杀
+                        </a>
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://qiye.mi.com/">
+                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/806f2dfb2d27978e33fe3815d3851fa3.png?w=48&h=48"
+                                alt="">
+                            企业团购
+                        </a>
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://www.mi.com/order/fcode">
+                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eded6fa3b897a058163e2485532c4f10.png?w=48&h=48"
+                                alt="">
+                            F码通道
+                        </a>
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://www.mi.com/mimobile">
+                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43a3195efa6a3cc7662efed8e7abe8bf.png?w=48&h=48"
+                                alt="">
+                            米粉卡
+                        </a>
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://www.mi.com/a/h/16769.html">
+                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f4846bca6010a0deb9f85464409862af.png?w=48&h=48"
+                                alt="">
+                            以旧换新
+                        </a>
+                    </div>
+                    <div>
+                        <a target="_blank"
+                            href="https://account.xiaomi.com/fe/service/login/password?sid=recharge&qs=%253Fcallback%253Dhttp%25253A%25252F%25252Frecharge.10046.mi.com%25252Fsts%25253Fsign%25253DbC%2525252Bk1yrraTJbriZ0UbiV7hfzHz4%2525253D%252526followup%25253Dhttp%2525253A%2525252F%2525252Frecharge.10046.mi.com%2525252F%2526sid%253Drecharge&callback=http%3A%2F%2Frecharge.10046.mi.com%2Fsts%3Fsign%3DbC%252Bk1yrraTJbriZ0UbiV7hfzHz4%253D%26followup%3Dhttp%253A%252F%252Frecharge.10046.mi.com%252F&_sign=3pa5Zba%2FIHtDJzbFwCNYwaYP0sU%3D&serviceParam=%7B%22checkSafePhone%22%3Afalse%2C%22checkSafeAddress%22%3Afalse%2C%22lsrp_score%22%3A0.0%7D&showActiveX=false&theme=&needTheme=false&bizDeviceType=">
+                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9a76d7636b08e0988efb4fc384ae497b.png?w=48&h=48"
+                                alt="">
+                            <span>话费充值</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="Top_last_row_P2">
+                    <a target="_blank" href="https://www.mi.com/buy/detail?product_id=12511">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5d4298059889417157e8492750328492.jpg?w=632&h=340"
+                            alt="">
+                    </a>
+                </div>
+                <div class="Top_last_row_P3">
+                    <a target="_blank" href="https://www.mi.com/mi11">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b30177d629bfbe2fb42251c1b8538f7b.jpg?w=632&h=340"
+                            alt="">
+                    </a>
+
+                </div>
+                <div class="Top_last_row_P4">
+                    <a target="_blank" href="https://www.mi.com/flipbudspro">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9f18ac756fa2cedb16ea429b9c0001af.png?w=632&h=340"
+                            alt="">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="SecScreen">
+        <div class="XiaomimiaoshaWrapper">
+            <div class="Xiaomimiaosha">
+                <h2 class="Title_Xiaomimiaosha">小米秒杀</h2>
+                <div class="miaoshaWrapper">
+                    <div class="miaosha_Time">
+
+                    </div>
+                    <div class="miaosha_Scroll">
+
+                    </div>
+                </div>
+                <div class="Ads_Note9">
+                    <a target="_blank" href="https://www.mi.com/redminote9">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/431e5fd6bfd1b67d096928248be18303.jpg?thumb=1&w=1533&h=150&f=webp&q=90"
+                            alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ShoujiPartWrapper">
+            <div class="Shouji">
+                <h2 class="Title_Shouji">手机</h2>
+                <div class="shoujiWrapper">
+                    <div>
+                        <a target="_blank" href="https://www.mi.com/mixfold">
+                            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c583f2edc613f1be20fa415910b13ce3.jpg?thumb=1&w=293&h=768&f=webp&q=90"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="ShoujiRight">
+                        <div class="Shouji_content_Wrapper">
+                            <a target="_blank" href="https://www.mi.com/buy/detail?product_id=14206">
+                                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61454401f855cf5ed64747a6ac04bae5.jpg?thumb=1&w=250&h=250&f=webp&q=90"
+                                    alt="">
+                                <h3 class="Shouji_name">Note 10 Pro</h3>
+                                <p class="Shouji_intro">天玑1100年度旗舰芯，VC液冷散热</p>
+                                <p class="Shouji_price">1699元起</p>
+                            </a>
+
+                        </div>
+                        <div class="Shouji_content_Wrapper">
+                            <a target="_blank" href="https://www.mi.com/buy?product_id=14210">
+                                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8909080ddb0851af0b87530e2927844f.jpg?thumb=1&w=250&h=250&f=webp&q=90"
+                                    alt="">
+                                <h3 class="Shouji_name">Note 10 Pro</h3>
+                                <p class="Shouji_intro">天玑1100年度旗舰芯，VC液冷散热</p>
+                                <p class="Shouji_price">1699元起</p>
+                            </a>
+                        </div>
+                        <div class="Shouji_content_Wrapper">
+                            <a target="_blank" href="https://www.mi.com/mixfold">
+                                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5dc32ec73299ff79556dcd1cf0f0ac11.png?thumb=1&w=250&h=250&f=webp&q=90"
+                                    alt="">
+                                <h3 class="Shouji_name">Note 10 Pro</h3>
+                                <p class="Shouji_intro">天玑1100年度旗舰芯，VC液冷散热</p>
+                                <p class="Shouji_price">1699元起</p>
+                            </a>
+                        </div>
+                        <div class="Shouji_content_Wrapper">
+                            <a target="_blank" href="https://www.mi.com/mi11ultra">
+                                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eb69512d9d6430d865d457ec52eebb51.png?thumb=1&w=250&h=250&f=webp&q=90"
+                                    alt="">
+                                <h3 class="Shouji_name">Note 10 Pro</h3>
+                                <p class="Shouji_intro">天玑1100年度旗舰芯，VC液冷散热</p>
+                                <p class="Shouji_price">1699元起</p>
+                            </a>
+                        </div>
+                        <div class="Shouji_content_Wrapper">
+                            <a target="_blank" href="https://www.mi.com/mi11ultra">
+                                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/34caee2c867bfd8c5e0dc2d8c663e121.jpg?thumb=1&w=250&h=250&f=webp&q=90"
+                                    alt="">
+                                <h3 class="Shouji_name">Note 10 Pro</h3>
+                                <p class="Shouji_intro">天玑1100年度旗舰芯，VC液冷散热</p>
+                                <p class="Shouji_price">1699元起</p>
+                            </a>
+                        </div>
+                        <div class="Shouji_content_Wrapper">
+                            <a target="_blank" href="https://www.mi.com/mi11ultra">
+                                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cb554f30eaa0316b0a736c3d59f21584.png?thumb=1&w=250&h=250&f=webp&q=90"
+                                    alt="">
+                                <h3 class="Shouji_name">Note 10 Pro</h3>
+                                <p class="Shouji_intro">天玑1100年度旗舰芯，VC液冷散热</p>
+                                <p class="Shouji_price">1699元起</p>
+                            </a>
+                        </div>
+                        <div class="Shouji_content_Wrapper">
+                            <a target="_blank" href="https://www.mi.com/mi11ultra">
+                                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3b7fbb6fe07907c60f08358adab5adfe.png?thumb=1&w=250&h=250&f=webp&q=90"
+                                    alt="">
+                                <h3 class="Shouji_name">Note 10 Pro</h3>
+                                <p class="Shouji_intro">天玑1100年度旗舰芯，VC液冷散热</p>
+                                <p class="Shouji_price">1699元起</p>
+                            </a>
+                        </div>
+                        <div class="Shouji_content_Wrapper">
+                            <a target="_blank" href="https://www.mi.com/mi11ultra">
+                                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d47f7ecaa04d92bf2790d4a5d53d9099.png?thumb=1&w=250&h=250&f=webp&q=90"
+                                    alt="">
+                                <h3 class="Shouji_name">Note 10 Pro</h3>
+                                <p class="Shouji_intro">天玑1100年度旗舰芯，VC液冷散热</p>
+                                <p class="Shouji_price">1699元起</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
