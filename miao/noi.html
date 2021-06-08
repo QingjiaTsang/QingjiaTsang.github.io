@@ -1,7 +1,7 @@
 <script id="ch0103/01">
     var A = Number(prompt(""))
     var B = Number(prompt(""))
-    console.log( A+B )
+        console.log(A + B)
 </script>
 
 <script id="ch0103/02">
@@ -9,7 +9,7 @@
     var b = Number(prompt(""))
     var c = Number(prompt(""))
 
-    console.log( (a + b) * c )
+        console.log((a + b) * c)
 </script>
 
 <script id="ch0103/03">
@@ -23,16 +23,16 @@
     var a = Number(prompt(""))
     var b = Number(prompt(""))
 
-    console.log( Math.floor( a / b) )
-    console.log( a % b )
+        console.log(Math.floor(a / b))
+        console.log(a % b)
 </script>
 
 <script id="ch0103/05">
     var a = Number(prompt(""))
     var b = Number(prompt(""))
-    var c = a/b
+        var c = a / b
 
-    console.log( c.toFixed(9) )
+        console.log(c.toFixed(9))
 </script>
 
 
@@ -69,6 +69,8 @@
     var l = (2 * r).toFixed(4)
     var c = (2 * Math.PI * r).toFixed(4)
     var s = (Math.PI * r ** 2).toFixed(4)
+        console.log(l, c, s)
+
 </script>
 
 <script id="ch0103/10">
@@ -81,7 +83,7 @@
 
 </script>
 
-<script id="ch0103/11">         
+<script id="ch0103/11">
     var a = Number(prompt(""))
     var b = Number(prompt(""))
 
@@ -94,7 +96,7 @@
 
 <script id="ch0103/12">
     var r = Number(prompt(""))
-    var V = 4/3 * Math.PI * r**3
+        var V = 4 / 3 * 3.14 * r ** 3
 
     console.log(V.toFixed(2))
 </script>
@@ -103,11 +105,11 @@
 <script id="ch0103/13">
     var a = Number(prompt(""))
 
-    var i = String(a%10)
-    var j = String(Math.floor(a/10)%10)
+        var i = String(a % 10)
+        var j = String(Math.floor(a / 10) % 10)
     var k = String(Math.floor(a / 100) % 10)
-    
-    console.log( i+j+k)
+
+        console.log(i + j + k)
 </script>
 
 <script id="ch0103/14">
@@ -137,7 +139,7 @@
     var y1 = Number(prompt(""))
     var y2 = Number(prompt(""))
 
-    var ret = Math.sqrt( (x1-x2)**2 + (y1-y2)**2 )
+        var ret = (Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)).toFixed(3)
 </script>
 
 <script id="ch0103/17">
@@ -153,7 +155,7 @@
     var c = Math.sqrt((x2 - x3) ** 2 + (y2 - y3) ** 2)
     var p = (a + b + c) / 2
 
-    var S = Math.sqrt( p * (p-a)*(p-b)(p-c) )
+        var S = (Math.sqrt(p * (p - a) * (p - b)(p - c))).toFixed(2)
 
     console.log(S)
 </script>
@@ -164,7 +166,7 @@
     var a2 = Number(prompt(""))
     var n = Number(prompt(""))
 
-    var ret = a1 + (n-1)*(a2-a1)
+        var ret = a1 + (n - 1) * (a2 - a1)
     console.log(ret)
 </script>
 
@@ -172,12 +174,12 @@
     var A = Number(prompt(""))
     var B = Number(prompt(""))
 
-    console.log( A * B )
+        console.log(A * B)
 
 </script>
 
 <script id="ch0103/20">
     var n = Number(prompt(""))
-    
-    console.log( 2**n )
+
+        console.log(2 ** n)
 </script>
