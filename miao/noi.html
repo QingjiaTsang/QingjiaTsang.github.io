@@ -436,10 +436,10 @@
     var x1
     var x2
     var sd
-
+    // debugger
     var delta = b * b - 4 * a * c
 
-    if (delta = 0) {
+    if (delta == 0) {
         sd = Math.sqrt(delta)
         x1 = String(((-b + sd) / (2 * a)).toFixed(5))
     }
@@ -450,8 +450,8 @@
     }
     else {
         sd = Math.sqrt(-(delta))
-        x1 = String((-(b / (2 * a))).toFixed(5)) + "+" + String(sd / (2 * a).toFixed(5)) + "i"
-        x2 = String((-(b / (2 * a))).toFixed(5)) + "+" + String((-(sd / (2 * a))).toFixed(5)) + "i"
+        x1 = String((-(b / (2 * a))).toFixed(5)) + "+" + String((sd / (2 * a)).toFixed(5)) + "i"
+        x2 = String((-(b / (2 * a))).toFixed(5)) + "-" + String((sd / (2 * a)).toFixed(5)) + "i"
     }
 
     console.log("x1=" + x1)
@@ -466,5 +466,11 @@
     var leftover = Math.floor(n - y / x)
 
     console.log(leftover)
+
+</script>
+
+
+<script id="ch0105/01">
+
 
 </script>
