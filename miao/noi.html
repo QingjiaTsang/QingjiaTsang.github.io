@@ -740,7 +740,7 @@
     console.log(sum)
 </script>
 
-<script id="ch0105/20">
+<script id="ch0105/20">             //UNDONE
     var h0 = Number(prompt(""))
     var h = 0
     var s = 0
@@ -753,5 +753,49 @@
     }
     console.log(s)
     console.log(h0)
+</script>
+
+<script id="ch0105/21">
+    var n = Number(prompt(""))
+    var temp1
+    var temp2
+
+    while (n != 1) {
+        if (n % 2 == 0) {
+            temp1 = n / 2
+            console.log("" + n + "/" + "2" + "=" + String(temp1))
+            n = temp1
+        }
+        else {
+            temp2 = n * 3 + 1
+            console.log("" + n + "*" + "3" + "+" + "1" + "=" + temp2)
+            n = temp2
+        }
+    }
+    console.log("END")
+
+</script>
+
+<script id="ch0105/22">
+    var monthly_spend
+    var balance = 0
+    var save = 0
+
+    for (var i = 0; i < 12; i++) {
+        monthly_spend = +prompt("")
+        balance += 300 - monthly_spend
+        if (balance >= 100) {
+            save += Math.floor(balance / 100) * 100
+            balance -= Math.floor(balance / 100) * 100
+        }
+        if (balance < 0) {
+            break
+        }
+    }
+    if (i == 12)
+        console.log(save * (1 + 0.2))
+    if (i < 12)
+        console.log(i + 1)
+
 
 </script>
