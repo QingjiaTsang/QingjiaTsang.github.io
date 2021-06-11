@@ -824,12 +824,12 @@
         var a = Number(prompt(""))
         var b = Number(prompt(""))
         if ((a < 90 || a > 140) || (b < 60 || b > 90)) {
-            if (max_cnt < cnt)
-                max_cnt = cnt
             cnt = 0
         }
         if ((a >= 90 && a <= 140) && (b >= 60 && b <= 90)) {
             cnt++
+            if (max_cnt < cnt)
+                max_cnt = cnt
         }
     }
     console.log(max_cnt)
