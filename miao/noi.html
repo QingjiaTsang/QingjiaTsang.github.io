@@ -692,7 +692,7 @@
     console.log(sum)
 
 </script>
-<script id="ch0105/18">         // UNDONE
+<script id="ch0105/18">
     var ds_others
     var vs_others
     var v_others
@@ -712,7 +712,7 @@
         v_others = vs_others / ds_others
         if (v_others - v_jiwei > 0.05)
             console.log("better")
-        else if (v_others - v_jiwei < 0.05)
+        else if (v_jiwei - v_others > 0.05)
             console.log("worse")
         else
             console.log("same")
@@ -739,7 +739,7 @@
     console.log(sum)
 </script>
 
-<script id="ch0105/20">             //UNDONE
+<script id="ch0105/20">
     var h0 = Number(prompt(""))
     var h = 0
     var s = 0
@@ -750,7 +750,7 @@
         s += temp
         h0 = h0 / 2
     }
-    console.log(s)
+    console.log((s - h0).toFixed(4))
     console.log(h0)
 </script>
 
