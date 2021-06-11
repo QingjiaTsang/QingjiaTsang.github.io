@@ -669,9 +669,8 @@
             console.log(i + 1)
             break
         }
-
     }
-    if (i > 20)
+    if (i == 20)
         console.log("Impossible")
 </script>
 
@@ -800,6 +799,41 @@
 </script>
 
 <script id="ch0105/23">
+    var m = Number(prompt(""))
+    var n = Number(prompt(""))
+    var cnt = 0
+
+    for (var i = 0; i < n; i++) {
+        var med = Number(prompt(""))
+        if (m > 0 && m - med >= 0) {
+            m -= med
+        }
+        else {
+            cnt++
+        }
+    }
+    console.log(cnt)
+</script>
+
+<script id="ch0105/24">
+    var n = Number(prompt(""))
+    var cnt = 0
+
+    for (var i = 0; i < n; i++) {
+        var a = Number(prompt(""))
+        var b = Number(prompt(""))
+        if ((a < 90 || a > 140) || (b < 60 || b > 90)) {
+            cnt = 0
+        }
+        if ((a >= 90 && a <= 140) && (b >= 60 && b <= 90)) {
+            cnt++
+        }
+    }
+    console.log(cnt)
+
+</script>
+
+<script id="ch0105/25">
 
 
 </script>
