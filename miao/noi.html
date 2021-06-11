@@ -775,7 +775,7 @@
 
 </script>
 
-<script id="ch0105/22">         //UNDONE
+<script id="ch0105/22">
     var monthly_spend
     var balance = 0
     var save = 0
@@ -792,7 +792,7 @@
         }
     }
     if (i == 12)
-        console.log(save * (1 + 0.2))
+        console.log(save * (1 + 0.2) + balance)
     if (i < 12)
         console.log("-" + (i + 1))
 
@@ -818,18 +818,21 @@
 <script id="ch0105/24">
     var n = Number(prompt(""))
     var cnt = 0
+    var max_cnt = 0
 
     for (var i = 0; i < n; i++) {
         var a = Number(prompt(""))
         var b = Number(prompt(""))
         if ((a < 90 || a > 140) || (b < 60 || b > 90)) {
+            if (max_cnt < cnt)
+                max_cnt = cnt
             cnt = 0
         }
         if ((a >= 90 && a <= 140) && (b >= 60 && b <= 90)) {
             cnt++
         }
     }
-    console.log(cnt)
+    console.log(max_cnt)
 
 </script>
 
