@@ -835,11 +835,109 @@
 
 <script id="ch0105/25">
     var newstr
-    for (var i = 81; i < 343; i++) {
-        j = String(i).split("").reverse().join("")
-        if (i.toString(7) == j.toString(9)) {
+    for (var i = 81; i <= 729; i++) {
+        var j = i.toString(9)
+        var k = String(j).split("").reverse().join("")
+
+        if (i.toString(7) == k) {
             console.log(i)
+            break
         }
+    }
+
+    console.log(i.toString(7))
+    console.log(j)
+</script>
+
+
+<script id="ch0105/26">
+    var n = Number(prompt(""))
+    var sum = 0
+    var ge
+    var shi
+    var bai
+    var qian
+
+    for (var i = 0; i < n; i++) {
+        var num = Number(prompt(""))
+        ge = num % 10
+        shi = Math.trunc(num / 10) % 10
+        bai = Math.trunc(num / 100) % 10
+        qian = Math.trunc(num / 1000) % 10
+
+        if (ge - qian - bai - shi > 0)
+            sum++
+    }
+    console.log(sum)
+</script>
+
+<script id="ch0105/27">
+    var num = Number(prompt(""))
+    var Sn = 0
+    var temp = 1
+    while (Sn < num) {
+        Sn += 1 / temp
+        temp++
+    }
+    console.log(temp)
+</script>
+
+<script id="ch0105/28">
+    var n = Number(prompt(""))
+    var l = String(n).length
+
+    for (var i = 0; i < l; i++) {
+        if (n / 10 > 0) {
+            console.log(n % 10)
+            n = Math.trunc(n / 10)
+        }
+    }
+</script>
+
+
+<script id="ch0105/29">
+    var n = prompt("")
+    var num = +n
+
+    var ret = Number(n.split("").reverse().join(""))
+
+    if (num >= 0) {
+        console.log(ret)
+    }
+    else {
+        ret = Number(String(-num).split("").reverse().join(""))
+        console.log("-" + ret)
+    }
+
+</script>
+
+<script id="ch0105/30">
+    var m = Number(prompt(""))
+    var k = Number(prompt(""))
+    var l = String(m).length
+    var j = 0
+    var cnt = 0
+    if (m % 19 == 0) {
+        j = 1
+    }
+
+    for (var i = 0; i < l; i++) {
+        if (String(m)[i] == 3)
+            cnt++
+    }
+    if (cnt == k && j == 1)
+        console.log("YES")
+    else
+        console.log("NO")
+
+</script>
+
+<script id="ch0105/31">
+    var n = Number(prompt(""))
+    var m = Number(prompt(""))
+    var array
+    for (var i = 0; i < n; i++) {
+
     }
 
 </script>
