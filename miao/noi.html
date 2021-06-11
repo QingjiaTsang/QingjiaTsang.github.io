@@ -834,6 +834,12 @@
 </script>
 
 <script id="ch0105/25">
-
+    var newstr
+    for (var i = 81; i < 343; i++) {
+        j = String(i).split("").reverse().join("")
+        if (i.toString(7) == j.toString(9)) {
+            console.log(i)
+        }
+    }
 
 </script>
