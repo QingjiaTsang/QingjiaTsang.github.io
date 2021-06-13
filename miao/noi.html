@@ -935,12 +935,16 @@
 
 </script>
 
-<script id="ch0105/31">
+<script id="ch0105/31">         //TO BE BETTER
     var n = Number(prompt(""))
     var m = Number(prompt(""))
     var lantern = new Array()
     var i
     var j
+    var temp1 = ""
+    var temp2 = ""
+    var ret = ""
+
     for (i = 1; i <= n; i++) {
         lantern[i] = 0
     }
@@ -960,6 +964,99 @@
 
     for (i = 1; i <= n; i++) {
         if (lantern[i] == 0)
-            console.log(i)
+            temp1 += String(i) + ","
     }
+    temp2 = temp1.split('', temp1.length - 1)
+    for (i = 0; i < temp2.length; i++) {
+        ret += String(temp2[i])
+    }
+
+    console.log(ret)
 </script>
+
+<script id="ch0105/32">
+    var n = Number(prompt(""))
+    var q1 = 2
+    var p1 = 1
+    var sum = 0
+    var temp
+    for (var i = 0; i < n; i++) {
+        sum += q1 / p1
+        temp = q1
+        q1 = p1 + q1
+        p1 = temp
+
+    }
+    console.log(sum.toFixed(4))
+
+</script>
+
+<script id="ch0105/33">
+    var n = Number(prompt(""))
+    var sum = 0
+
+    for (var i = 1; i <= n; i++) {
+        if (i % 2 == 0) {
+            sum -= 1 / i
+        }
+        else {
+            sum += 1 / i
+        }
+    }
+    console.log(sum.toFixed(4))
+
+</script>
+
+<script id="ch0105/34">
+    var n = Number(prompt(""))
+    var sum = 0
+    var mult = 1
+
+    for (var i = 1; i <= n; i++) {
+        for (var j = 1; j <= i; j++) {
+            mult *= j
+        }
+        sum += mult
+        mult = 1
+    }
+
+    console.log(sum)
+
+</script>
+
+<script id="ch0105/35">
+    var n = Number(prompt(""))
+    var sum = 1
+    var mult = 1
+
+    for (var i = 1; i <= n; i++) {
+        for (var j = 1; j <= i; j++) {
+            mult *= j
+        }
+        sum += 1 / mult
+        mult = 1
+    }
+
+    console.log(sum.toFixed(10))
+
+</script>
+
+<script id="ch0105/36">
+    var x = Number(prompt(""))
+    var n = Number(prompt(""))
+    var sum = 1
+    for (var i = 1; i <= n; i++) {
+        sum += x ** i
+    }
+    console.log(sum.toFixed(2))
+
+</script>
+
+<!-- <script id="ch0105/37">
+    var m = Number(prompt(""))
+    var n = Number(prompt(""))
+    var x = Number(prompt(""))
+
+
+
+</script> -->
