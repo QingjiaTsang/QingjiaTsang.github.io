@@ -1052,11 +1052,118 @@
 
 </script>
 
-<!-- <script id="ch0105/37">
+<script id="ch0105/37">
     var m = Number(prompt(""))
     var n = Number(prompt(""))
     var x = Number(prompt(""))
+    var strength = 0
+    var fight = n
 
+    do {
+        if (x > 0 && strength < m) {  //能量块还没消耗完 && 体力不够m时 =》 补充体力到最大值m
+            if (m / fight >= 1) {  //当fight的值还没超过m的时候，相对应的补充体力的方案
+                strength += Math.floor(m / fight) * Math.trunc(fight)   // (1)如果
+                x = x - Math.floor(m / fight)
+                if (m % fight < fight && m % fight > 0) { //反思：这里一开始漏写了m % fight > 0 这个判断条件
+                    strength++
+                    x--
+                }
+            }
+            else {  // fight的值在此时超过了m的时候，相对应的补充体力的方案
+                strength += m
+                x--
+            }
+        }
+        if (strength == m) {  //开始进入战斗期，战力相对应增加，体力置零；
+            //这里有个细节点：“在同一个战斗期内，雇佣兵每连续战斗n天，战斗力就会上升1点，n为当前战斗期开始时的战斗力。”
+            //即，倘若当当前战斗力fight > m时，则会一直不满足“雇佣兵每连续战斗n天”的条件，因为fight始终大于m，连续战斗天数最多只能为m
+            //所以到了该临界点之后，尽管循环还是一直走直到能量块x<0才结束，但在这个过程中fight一直递增0，相当于不再变化了！
+            fight += Math.floor(m / fight)
+            strength = 0
+        }
+    } while (strength < m && x > 0)
 
+    console.log(fight)
+</script>
+
+<script id="ch0105/38">
+    var a
+    var b
+    var ret = ""
+
+    var n = Number(prompt(""))
+    for (var i = 0; i < n; i++) {
+        a = Number(prompt(""))
+        for (var j = a; j >= 0; j--) {
+            b = Number(prompt(""))
+            if (a == 0) {
+                ret = 0
+                break
+            }
+            if (j > 0) {
+                ret += j * b + " "
+            }
+        }
+        console.log(ret)
+        ret = ""
+    }
+</script>
+
+<script id="ch0105/39">
+    var n = Number(prompt(""))
+    var sum = 0
+    var digit
+    var hun
+
+    for (var i = 1; i <= n; i++) {
+        digit = i % 10
+        hun = (i / 10 - digit) % 10
+        if (!(i % 7 == 0) && digit != 7 && hun != 7) {
+            sum += i ** 2
+        }
+    }
+    console.log(sum)
+</script>
+
+<script id="ch0105/40">             //考虑下不用字符串来做的方法
+    var n = prompt()
+    var sum = 0
+
+    function cntChar(str, a) {
+        var b = str.indexOf(a)
+        var num = 0
+        while (b !== -1) {
+            num++
+            b = str.indexOf(a, b + 1)
+        }
+        return num
+    }
+
+    for (var i = 1; i <= Number(n); i++) {
+        sum += cntChar(String(i), '1')
+    }
+    console.log(sum)
+</script>
+
+<!-- <script id="ch0105/40">
+    var n = prompt()
+    var sum = 0
+
+    for (var i = 0; i < n.length; i++) {
+        
+    }
+
+    for (var i = 0; i < n; i++) {
+
+    }
+    console.log(sum)
 
 </script> -->
+
+
+
+<script id="ch0105/41">
+
+
+
+</script>
