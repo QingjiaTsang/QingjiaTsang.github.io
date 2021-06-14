@@ -1240,10 +1240,19 @@
 
 </script>
 
-<script id="ch0105/44">     //UNDONE
+<script id="ch0105/44">
     var n = Number(prompt())
-    var min = 999999
-
+    var prime = new Array()
+    var k = 0
+    for (var i = 2; i <= 10000; i++) {
+        if (i == 2 || i == 3 || i == 5) {
+            prime[k++] = i
+        }
+        if (i % 2 != 0 && i % 3 != 0 && i % 5 != 0) {
+            prime[k++] = i
+        }
+    }
+    console.log(prime[n - 1])
 
 </script>
 
