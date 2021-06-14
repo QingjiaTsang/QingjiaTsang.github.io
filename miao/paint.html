@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>画图</title>
+    <style>
+        canvas {
+            border: 2px solid #f0f;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="500" height="500"></canvas>
+</body>
+<script>
+    var canvas = document.querySelector('canvas')
+    canvas.style.imageRendering = 'pixelated' //放大时的插帧方式：不插帧，直接放大像素
+    var ctx = canvas.getContext('2d')
+
+    function dot(x, y, color = 'black') {
+        x = Math.round(x)
+        y = Math.round(y)
+        ctx.fillStyle = color
+        ctx.fillRect(x, y, 1, 1)
+    }
+  /**
+     * YOUR TASK
+            * 在 坐标 (42, 42) 画出一个点
+            * 画一条实线
+            * 画一条一个实点一个空点的虚线
+            * 画一条两个实点两个空点的虚线
+            * 画一条三个实点两个空点的虚线
+            * 画一条45度的斜线
+        * 画一条30度的斜线（与x轴或y轴的夹角呈30度）
+            * 画一条跨越画布左上角和右下角的对角线
+            * 画一个空心矩形
+            * 画一个实心矩形
+            * 画两个空心的圆，居中：
+        * 一个半径为50像素
+        * 一个半径为200像素
+            * 画一个实心的圆，半径至少为100像素
+        * 画一个【大小合适】的sin(x)的图像
+  
+            * 画出rgb色彩空间的某一面（尺寸要大于100x100）
+            如果做出上一题后，尝试将其每个点的坐标乘以一个矩阵（如(2,0,0,2)或(1,0.27得到新的位置，即绘制出被线性变幻后的色彩空间某一面
+            可以考虑如下几种矩阵：
+                2 0
+                0 2
+                ------
+                1  0.27
+                0  1
+                ------
+                0.5    0.87
+                -0.87  0.5
+  
+     */
+</script>
+<script>
+  // 不可更改上面的代码
+  // 你的代码写在这里
+  // YOUR CODE GOES BELOW
+    var i,j
+
+    //T1 * 在 坐标 (42, 42) 画出一个点
+    dot(42,42)
+    //T2 * 画一条实线
+    for (i=0;i<80;i++)
+        dot(i,10)
+    //T3 * 画一条一个实点一个空点的虚线
+    for (i=0;i<80;i++) {
+        if (i%2==0) 
+            dot(i,20,'blue')
+    }
+    //T4 * 画一条两个实点两个空点的虚线
+    for (i=0;i<80;i+=4) {
+        if (i%2==0) {
+            dot(i,30,'red')
+            dot(i+1,30,'red')
+        }
+    }
+    //T5 * 画一条45度的斜线
+    for (i=0;i<20;i++) {
+        for (j=0;j<20;j++) {
+            if (j==i) {
+                dot(i,j+35)
+            }
+        }
+    }
+    //T6 * 画一条30度的斜线（与x轴或y轴的夹角呈30度）
+    // for (i=0;i<20;i++) {
+    //     for (j=0;j<20;j++) {
+    //         if (j==i) {
+    //             dot(i,j)
+    //         }
+    //     }
+    // }
+    
+    //T7 * 画一条跨越画布左上角和右下角的对角线
+    for (i=0;i<500;i++) {
+        for (j=0;j<500;j++) {
+            if (j==i) {
+                dot(i,j)
+            }
+        }
+    }
+    //T8 * 画一个空心矩形
+    for (i=0;i<30;i++) {
+        for (j=0;j<24;j++) {
+            if (i==0 || i==29) {
+                dot(i,j+60)
+            }
+            else {
+                if (j==0 || j==23) {
+                    dot(i,j+60)
+                }
+            }
+        }
+    }
+    //T9 * 画一个实心矩形
+    for (i=0;i<30;i++) {
+        for (j=0;j<24;j++) {
+            dot(i,j+90)
+        }
+    }
+    //T10 * 画两个空心的圆，居中：
+    var d1,d2
+    for (i=0;i<500;i++) {
+        for (j=0;j<500;j++) {
+            d1 = Math.trunc(Math.sqrt((i-250)**2+(j-250)**2))  //圆心坐标为(250,250)
+            if ( d1==80 )
+                dot(i,j)
+        }
+    }
+    for (i=0;i<500;i++) {
+        for (j=0;j<500;j++) {
+            d2 = Math.trunc(Math.sqrt((i-250)**2+(j-250)**2))  //圆心坐标为(250,250)
+            if ( d2==50 )
+                dot(i,j)
+        }
+    }   
+    //T10   //UNDONE
+
+    //T11   //UNDONE
+
+    //T12 * 画一个实心的圆，半径至少为100像素
+    for (i=0;i<500;i++) {
+        for (j=0;j<500;j++) {
+            d2 = Math.trunc(Math.sqrt((i-120)**2+(j-120)**2)) 
+            if ( d2<=101 )
+                dot(i+270,j, 'rgb(200,200,100)')
+        }
+    }
+    //T13 * 画一个【大小合适】的sin(x)的图像    //UNDONE
+    // function sin(x) {
+    //     return x -(x**3)/3 + (x**5)/120 - (x**7)/5040
+    // }
+    // for (i=0;i<500;i++) {
+    //     for (j=0;j<500;j++) {
+    //         if (j == sin(i))
+    //             dot(i,j)
+    //     }
+    // }
+    
+    //T14 * 画出rgb色彩空间的某一面（尺寸要大于100x100）
+    for (i=0;i<130;i++) {
+        for (j=0;j<130;j++) {  
+            dot( i, j+250, 'rgb( '+i+','+j+',0)'  )
+        }
+    }
+    for (i=0;i<130;i++) {
+        for (j=0;j<130;j++) {  
+            dot( i*2, j*2+250, 'rgb( '+(i*2)+','+(j*2)+',0)'  )
+        }
+    }
+    for (i=0;i<130;i++) {
+        for (j=0;j<130;j++) {  
+            dot( i+360, i*0.27+j+250, 'rgb( '+(i)+','+(j)+',0)'  )
+        }
+    }
+    for (i=0;i<130;i++) {
+        for (j=0;j<130;j++) {  
+            dot( i*0.5-0.87*j   +150, i*0.87+j*0.5   +50, 'rgb( '+(i)+','+(j)+',0)'  )
+        }
+    }
+
+
+</script>
+
+</html>
