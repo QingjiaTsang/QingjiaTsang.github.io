@@ -1163,7 +1163,101 @@
 
 
 <script id="ch0105/41">
+    var n1 = prompt()
+    var n2 = prompt()
+    var sum = 0
+
+    function cntChar(str, a) {
+        var b = str.indexOf(a)
+        var num = 0
+        while (b !== -1) {
+            num++
+            b = str.indexOf(a, b + 1)
+        }
+        return num
+    }
+
+    for (var i = Number(n1); i <= Number(n2); i++) {
+        sum += cntChar(String(i), '2')
+    }
+    console.log(sum)
+</script>
+
+<script id="ch0105/42">         //UNDONE
+    var row = Number(prompt())
+    var col = Number(prompt())
+    var char = prompt()
+    var isEmptyHeart = Number(prompt())
+    var i, j
+    var canvas = new Array(row)
 
 
+    if (isEmptyHeart == 1) {
+        for (i = 0; i < row; i++) {
+            canvas[i] = new Array(col)
+            for (j = 0; j < col; j++) {
+                canvas[i][j] = char
+            }
+
+        }
+
+        for (i = 0; i < row; i++) {
+            for (j = 0; j < col; j++) {
+                console.log(canvas[i][j])
+            }
+        }
+    }
+    else {
+        for (i = 0; i < row; i++) {
+            canvas[i] = new Array(col)
+            for (j = 0; j < col; j++) {
+                if (i == 0 || i == row - 1) {
+                    canvas[i][j] = char
+                }
+                else {
+                    if (j == 0 || j == col - 1) {
+                        canvas[i][j] = char
+                    }
+                    else {
+                        canvas[i][j] = ' '
+                    }
+                }
+            }
+        }
+
+        for (i = 0; i < row; i++) {
+            for (j = 0; j < col; j++) {
+                console.log(canvas[i][j])
+            }
+        }
+    }
+
+</script>
+
+<script id="ch0105/43">  //UNDONE
+    var n = Number(prompt())
+
+
+</script>
+
+<script id="ch0105/44">     //UNDONE
+    var n = Number(prompt())
+    var min = 999999
+
+
+</script>
+
+
+<script id="ch0105/45">
+    var day = Number(prompt())
+    var n = 1
+    var sum = 0
+
+    while (day > 0) {
+        sum += n * n
+        n++
+        day = day - n
+    }
+    console.log(sum)
 
 </script>
