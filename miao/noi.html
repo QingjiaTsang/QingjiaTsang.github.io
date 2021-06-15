@@ -1089,7 +1089,7 @@
 <script id="ch0105/38">
     var a
     var b
-    var ret = ""
+    var ret
 
     var n = Number(prompt(""))
     for (var i = 0; i < n; i++) {
@@ -1098,14 +1098,14 @@
             b = Number(prompt(""))
             if (a == 0) {
                 ret = 0
+                console.log(ret)
                 break
             }
             if (j > 0) {
-                ret += j * b + " "
+                ret = j * b
+                console.log(ret)
             }
         }
-        console.log(ret)
-        ret = ""
     }
 </script>
 
