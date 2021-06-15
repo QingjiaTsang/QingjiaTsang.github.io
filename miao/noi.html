@@ -1183,61 +1183,49 @@
     console.log(sum)
 </script>
 
-<script id="ch0105/42">         //UNDONE
-    var row = Number(prompt())
-    var col = Number(prompt())
+<script id="ch0105/42">
+    var h = Number(prompt())
+    var w = Number(prompt())
     var char = prompt()
     var isEmptyHeart = Number(prompt())
-    var i, j
-    var canvas = new Array(row)
 
-
-    if (isEmptyHeart == 1) {
-        for (i = 0; i < row; i++) {
-            canvas[i] = new Array(col)
-            for (j = 0; j < col; j++) {
-                canvas[i][j] = char
-            }
-
+    var firstLine = ''
+    var middleLine = ''
+    for (var i = 0; i < w; i++) {
+        firstLine += char
+    }
+    for (var i = 0; i < w; i++) {
+        if (i == 0 || i == w - 1) {
+            middleLine += char
         }
-
-        for (i = 0; i < row; i++) {
-            for (j = 0; j < col; j++) {
-                console.log(canvas[i][j])
-            }
+        else {
+            middleLine += ' '
         }
     }
-    else {
-        for (i = 0; i < row; i++) {
-            canvas[i] = new Array(col)
-            for (j = 0; j < col; j++) {
-                if (i == 0 || i == row - 1) {
-                    canvas[i][j] = char
-                }
-                else {
-                    if (j == 0 || j == col - 1) {
-                        canvas[i][j] = char
-                    }
-                    else {
-                        canvas[i][j] = ' '
-                    }
-                }
-            }
-        }
 
-        for (i = 0; i < row; i++) {
-            for (j = 0; j < col; j++) {
-                console.log(canvas[i][j])
-            }
+    if (isEmptyHeart == 0) {
+        console.log(firstLine)
+        for (var y = 1; y < h - 1; y++) {
+            console.log(middleLine)
+        }
+        console.log(firstLine)
+    }
+    else {
+        for (var y = 0; y < h; y++) {
+            console.log(firstLine)
         }
     }
 
 </script>
 
-<script id="ch0105/43">  //UNDONE
+<script id="ch0105/43">
     var n = Number(prompt())
-
-
+    for (var i = 2; ; i++) {
+        if (n % i == 0) {
+            console.log(n / i)
+            break
+        }
+    }
 </script>
 
 <script id="ch0105/44">
