@@ -1336,9 +1336,38 @@
 </script>
 
 
-<script id='weekday'>   //UNDONE
+<script id='weekday'>
+    var year = +prompt()
+    var month = +prompt()
 
+    console.log(weekday(year, month))
 
+    function weekday(year, month) {
+        var pastYear_day = 0
+        var Month = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+        var thisYear_PastDay = 0
+        var totalPastday
+        var left
+        var weekday
+        for (var i = 0; i < year - 1; i++) {
+            if ((i % 4 == 0 && (i % 100 != 0)) || (i % 400 == 0)) {
+                pastYear_day += 366
+            }
+            else {
+                pastYear_day += 365
+            }
+        }
+        if ((year % 4 == 0 && (year % 100 != 0)) || (year % 400 == 0)) {
+            Month[1] = 29
+        }
+        for (var i = 0; i < month - 1; i++) {
+            thisYear_PastDay += Month[i]
+        }
+        totalPastday = pastYear_day + thisYear_PastDay
+        left = totalPastday % 7
+        weekday = 7 - left + 1
+        return weekday
+    }
 
 </script>
 
@@ -1449,39 +1478,4 @@
         var mult = n1 * n2
         return mult / GreatestCommonDivisor(n1, n2)
     }
-</script>
-
-<script id='weekday'>
-    var year = +prompt()
-    var month = +prompt()
-
-    console.log(weekday(year, month))
-
-    function weekday(year, month) {
-        var pastYear_day = 0
-        var Month = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
-        var thisYear_PastDay = 0
-        var totalPastday
-        var left
-        var weekday
-        for (var i = 0; i < year - 1; i++) {
-            if ((i % 4 == 0 && (i % 100 != 0)) || (i % 400 == 0)) {
-                pastYear_day += 366
-            }
-            else {
-                pastYear_day += 365
-            }
-        }
-        if ((year % 4 == 0 && (year % 100 != 0)) || (year % 400 == 0)) {
-            Month[1] = 29
-        }
-        for (var i = 0; i < month - 1; i++) {
-            thisYear_PastDay += Month[i]
-        }
-        totalPastday = pastYear_day + thisYear_PastDay
-        left = totalPastday % 7
-        weekday = 7 - left + 1
-        return weekday
-    }
-
 </script>
