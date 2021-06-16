@@ -899,18 +899,21 @@
 
 
 <script id="ch0105/29">
-    var n = prompt("")
-    var num = +n
-
-    var ret = Number(n.split("").reverse().join(""))
-
-    if (num >= 0) {
-        console.log(ret)
+    var n = +prompt("")
+    var sign = ''
+    var digit
+    var ret = 0
+    if (n < 0) {
+        sign = '-'
+        n = n * (-1)
     }
-    else {
-        ret = Number(String(-num).split("").reverse().join(""))
-        console.log("-" + ret)
-    }
+    do {
+        digit = n % 10
+        ret = ret * 10 + digit
+        n = (n - digit) / 10
+    } while (n)
+
+    console.log(sign + ret)
 
 </script>
 
