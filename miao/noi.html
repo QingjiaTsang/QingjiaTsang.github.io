@@ -930,7 +930,7 @@
     for (var i = 0; i < l; i++) {
         if (String(m)[i] == 3)
             cnt++
-    }
+    } 1
     if (cnt == k && j == 1)
         console.log("YES")
     else
@@ -1259,5 +1259,229 @@
         day = day - n
     }
     console.log(sum)
+
+</script>
+
+<script id='narcissistic'>
+    function isNarcissistic(n) {
+        var sum = 0
+        var k = n
+        var digit
+        do {
+            digit = n % 10
+            sum += digit ** 3
+            n = (n - digit) / 10
+        } while (n)
+        if (sum == k)
+            return true
+        else
+            return false
+    }
+
+    var n = +prompt()
+    if (isNarcissistic(n))
+        console.log("YES")
+    else
+        console.log("NO")
+
+</script>
+
+<script id='narcissistics'>
+    printNarcissisticsIn10000()
+
+    function printNarcissisticsIn10000() {
+        for (var i = 100; i < 1000; i++) {
+            if (isNarcissistic(i)) {
+                console.log(i)
+            }
+        }
+    }
+    function isNarcissistic(n) {
+        var sum = 0
+        var k = n
+        var digit
+        do {
+            digit = n % 10
+            sum += digit ** 3
+            n = (n - digit) / 10
+        } while (n)
+        if (sum == k)
+            return true
+        else
+            return false
+    }
+</script>
+
+<script id='palindrom'>
+    var n = +prompt()
+    if (isPalindrom(n))
+        console.log("YES")
+    else
+        console.log("NO")
+
+    function isPalindrom(n) {
+        var reverse = 0
+        var digit
+        var k = n
+        do {
+            digit = n % 10
+            reverse = reverse * 10 + digit
+            n = (n - digit) / 10
+        } while (n)
+        if (reverse == k)
+            return true
+        else
+            return false
+    }
+</script>
+
+
+<script id='weekday'>   //UNDONE
+
+
+
+</script>
+
+
+<script id='complete-number'>
+
+    function isCompleteNumber(n) {
+        var sum = 0
+        for (var i = 1; i < n; i++) {
+            if (n % i == 0) {
+                sum += i
+            }
+        }
+        if (sum == n)
+            return true
+        else
+            return false
+    }
+    var n = +prompt()
+    if (isCompleteNumber(n)) {
+        console.log("YES")
+    }
+    else
+        console.log("NO")
+
+</script>
+
+
+<script id='complete-numbers'>
+    function isCompleteNumber(n) {
+        var sum = 0
+        for (var i = 1; i < n; i++) {
+            if (n % i == 0) {
+                sum += i
+            }
+        }
+        if (sum == n)
+            return true
+        else
+            return false
+    }
+    for (var i = 1; i <= 1000; i++) {
+        if (isCompleteNumber(i)) {
+            console.log(i)
+        }
+    }
+</script>
+
+<script id='prime'>
+    var n = +prompt("")
+
+    if (isPrime(n)) {
+        console.log("YES")
+    }
+    else {
+        console.log("NO")
+    }
+
+    function isPrime(n) {
+        var sq = Math.sqrt(n)
+        for (var i = 2; i <= sq; i++) {
+            if (n % i == 0) {
+                return false
+            }
+        }
+        return true
+    }
+</script>
+
+<script id='primes'>
+    printIsPrimeIn1000()
+    function printIsPrimeIn1000() {
+        for (var i = 2; i <= 1000; i++) {
+            if (isPrime(i))
+                console.log(i)
+        }
+    }
+
+    function isPrime(n) {
+        var sq = Math.sqrt(n)
+        for (var i = 2; i <= sq; i++) {
+            if (n % i == 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+</script>
+
+<script id='lcf&lcm'>
+    var n1 = +prompt()
+    var n2 = +prompt()
+    console.log(GreatestCommonDivisor(n1, n2)) //输出最大公因数
+    console.log(LeastCommonMultiple(n1, n2))  //输出最大公倍数
+
+    function GreatestCommonDivisor(n1, n2) {
+        var left
+        do {
+            left = n1 % n2
+            n1 = n2
+            n2 = left
+        } while (left != 0)
+        return n1
+    }
+
+    function LeastCommonMultiple(n1, n2) {
+        var mult = n1 * n2
+        return mult / GreatestCommonDivisor(n1, n2)
+    }
+</script>
+
+<script id='weekday'>
+    var year = +prompt()
+    var month = +prompt()
+
+    console.log(weekday(year, month))
+
+    function weekday(year, month) {
+        var pastYear_day = 0
+        var Month = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+        var thisYear_PastDay = 0
+        var totalPastday
+        var left
+        var weekday
+        for (var i = 0; i < year - 1; i++) {
+            if ((i % 4 == 0 && (i % 100 != 0)) || (i % 400 == 0)) {
+                pastYear_day += 366
+            }
+            else {
+                pastYear_day += 365
+            }
+        }
+        if ((year % 4 == 0 && (year % 100 != 0)) || (year % 400 == 0)) {
+            Month[1] = 29
+        }
+        for (var i = 0; i < month - 1; i++) {
+            thisYear_PastDay += Month[i]
+        }
+        totalPastday = pastYear_day + thisYear_PastDay
+        left = totalPastday % 7
+        weekday = 7 - left + 1
+        return weekday
+    }
 
 </script>
