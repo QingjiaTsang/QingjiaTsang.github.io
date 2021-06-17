@@ -1346,19 +1346,19 @@
         var totalPastday
         var left
         var weekday
-        for (var i = 0; i < year - 1; i++) {
-            if ((i % 4 == 0 && (i % 100 != 0)) || (i % 400 == 0)) {
+        for (var i = 1; i < year; i++) {   //加总过去年份的天数
+            if ((i % 4 == 0 && (i % 100 != 0)) || (i % 400 == 0)) { //判断过往的年份是否是闰年
                 pastYear_day += 366
             }
             else {
                 pastYear_day += 365
             }
         }
-        if ((year % 4 == 0 && (year % 100 != 0)) || (year % 400 == 0)) {
+        if ((year % 4 == 0 && (year % 100 != 0)) || (year % 400 == 0)) { //判断今年是否是闰年，是则改变2月的天数
             Month[1] = 29
         }
 
-        for (var i = 0; i < month - 1; i++) {
+        for (var i = 0; i < month - 1; i++) {   //输入的月份之前的已经过去的月的总天数
             thisYear_PastDay += Month[i]
         }
         totalPastday = pastYear_day + thisYear_PastDay
@@ -1453,7 +1453,7 @@
 <script id='lcf&lcm'>
     var n1 = +prompt()
     var n2 = +prompt()
-    console.log(GreatestCommonDivisor(n1, n2)) //输出最大公因数
+    console.log(GreatestCommonDivisor(n1, n2)) //输出最小公因数
     console.log(LeastCommonMultiple(n1, n2))  //输出最大公倍数
 
     function GreatestCommonDivisor(n1, n2) {
