@@ -1328,10 +1328,7 @@
             reverse = reverse * 10 + digit
             n = (n - digit) / 10
         } while (n)
-        if (reverse == k)
-            return true
-        else
-            return false
+        reverse == k
     }
 </script>
 
@@ -1360,12 +1357,16 @@
         if ((year % 4 == 0 && (year % 100 != 0)) || (year % 400 == 0)) {
             Month[1] = 29
         }
+
         for (var i = 0; i < month - 1; i++) {
             thisYear_PastDay += Month[i]
         }
         totalPastday = pastYear_day + thisYear_PastDay
-        left = totalPastday % 7
-        weekday = left + 1
+        left = totalPastday % 7 + 1
+        if (left == 0)
+            weekday = 1
+        else
+            weekday = left
         return weekday
     }
 
@@ -1381,10 +1382,7 @@
                 sum += i
             }
         }
-        if (sum == n)
-            return true
-        else
-            return false
+        return sum == n
     }
     var n = +prompt()
     if (isCompleteNumber(n)) {
@@ -1404,10 +1402,7 @@
                 sum += i
             }
         }
-        if (sum == n)
-            return true
-        else
-            return false
+        return sum == n
     }
     for (var i = 1; i <= 1000; i++) {
         if (isCompleteNumber(i)) {
