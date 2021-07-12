@@ -1,0 +1,12 @@
+var QingjiaTsang = function () {
+
+
+
+
+
+    return {
+
+    }
+
+
+}()
