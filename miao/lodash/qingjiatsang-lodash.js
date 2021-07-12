@@ -1,4 +1,4 @@
-var QingjiaTsang = function () {
+var qingjiatsang = function () {
 
     function chunk () {
 
