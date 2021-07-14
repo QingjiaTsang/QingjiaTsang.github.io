@@ -220,6 +220,7 @@ var qingjiatsang = function () {
         reduce: reduce,
         map: map,
         zip: zip,
+        unzip: unzip,
 
 
 
