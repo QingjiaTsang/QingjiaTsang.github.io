@@ -151,6 +151,28 @@ var qingjiatsang = function () {
         return initial
     }
 
+    /*输入：map([{"a":{"b":1}},{"a":{"b":2}}],"a.b")
+    输出：[[{"b":1}],[{"b":2}]]
+    期望：[1,2] 
+
+    错误：TypeError: Cannot read property 'length' of undefined
+    at testCasesByHand.map (http://10.2.2.2:7000/lodash-oj9/libs/test-cases-by-hand.js:15:47)
+    at Object.map (qingjiatsang-lodash.js:162:30)
+    at compareTest (http://10.2.2.2:7000/lodash-oj9/libs/tester.js:98:19)
+    at http://10.2.2.2:7000/lodash-oj9/libs/tester.js:20:16
+    at Array.map ()
+    at test (http://10.2.2.2:7000/lodash-oj9/libs/tester.js:18:22)
+    at http://10.2.2.2:7000/lodash-oj9/:342:20
+    at Array.map ()
+    at http://10.2.2.2:7000/lodash-oj9/:341:40
+    输入：map([1,2,3],function(v,i,o) {return v+i+o.length*2})
+    期望：[7,9,11]
+
+    输入：map([{"user":"barney"},{"user":"fred"}],"user")
+    输出：[["barney"],["fred"]]
+    期望：["barney","fred"]
+
+*/
     function map (collection, iteratee) {
         var ret = []
         if (Array.isArray(collection)) {
@@ -208,6 +230,84 @@ var qingjiatsang = function () {
         return ret
     }
 
+    function values (object) {
+        var ret = []
+        var typeArg = typeof (object)
+        if (typeArg == "object") {
+            if (Array.isArray(object)) {
+                for (var i = 0; i < object.length; i++) {
+                    ret.push(object[i])
+                }
+            }
+            else {
+                for (var key in object) {
+                    ret.push(object[key])
+                }
+            }
+        }
+        else {
+            for (var i = 0; i < object.length; i++) {
+                ret.push(object[i])
+            }
+        }
+        return ret
+    }
+
+    function matches (obj) {
+        return function (src) {
+            for (var key in src) {
+                if (!(key in obj)) {
+                    return false
+                }
+            }
+
+        }
+    }
+
+    function matchesProperty (ary) {
+        return function (obj) {
+            let key = ary[0]
+            let val = ary[1]
+            if (key in obj) {
+                obj[key] === val
+                return true
+            }
+            return false
+        }
+    }
+
+    function get (object, path) {
+        for (var i = 0; i < path.length; i++) {
+            var val = object[path[i]]
+        }
+    }
+
+
+    function isMatch (object, source) {
+        for (var key in source) {
+            if (source[key] && typeof source[key] == "Object") {
+                if (!isMatch(object[key], source[key])) {
+                    return false
+                }
+            }
+            else {
+                if (!(object[key] == source[key])) {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+
+    function sumBy (ary, predicate) {
+        let sum = 0
+        for (var item of ary) {
+            for (var predicate in item) {
+                sum += ary[predicate]
+            }
+        }
+    }
+
 
 
     return {
@@ -221,6 +321,10 @@ var qingjiatsang = function () {
         map: map,
         zip: zip,
         unzip: unzip,
+        values: values,
+        keys: keys,
+
+
 
 
 

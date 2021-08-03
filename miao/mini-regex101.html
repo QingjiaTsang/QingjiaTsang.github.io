@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #reg {
+            width: 300px;
+        }
+
+        #strInput {
+            font-size: 16px;
+            font-family: consola;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 1px solid;
+            white-space: pre-wrap;
+            /* 以下两行是为了覆盖住pre标签的 */
+            /* 由于textarea没有定位，没有定位的元素总是在定位元素pre的下方，所以要给他相对定位再设置下z-index */
+            z-index: 15;
+            position: relative;
+            /* 覆盖了pre标签，但是为了pre标签的高亮能展示出来，需要设置成透明的 */
+            background-color: transparent;
+            /* overflow-y: scroll; */
+            box-sizing: border-box;
+        }
+
+        section {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+
+        pre {
+            font-size: 16px;
+            font-family: consola;
+            width: 100%;
+            height: 100%;
+            white-space: pre-wrap;
+            margin: 0;
+            padding: 0;
+            border: 1px solid;
+            position: absolute;
+            top: 65px;
+            left: 0px;
+            /* 由于重叠了字颜色会深，让字颜色浅一点 */
+            color: transparent;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        em:empty {
+            border-right: 2px dotted red;
+            margin-right: -1px;
+            background-color: transparent;
+            overflow-y: scroll;
+        }
+
+        label,
+        label input {
+            cursor: pointer;
+        }
+
+        em {
+            font-style: normal;
+            background-color: rgb(159, 207, 255);
+        }
+
+        em:nth-of-type(2n) {
+            background-color: rgb(213, 235, 255);
+        }
+
+        #regExpError {
+            white-space: nowrap;
+            margin: 0;
+            color: red;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div>
+        <!-- 正则表达式输入框 -->
+        REGULAR EXPRESSION
+        <label>
+            <input type="checkbox" onclick="run()" name="flags" id="i"> i
+        </label>
+        <label>
+            <input type="checkbox" checked onclick="run()" name="flags" id="g"> g
+        </label>
+        <label>
+            <input type="checkbox" checked onclick="run()" name="flags" id="m"> m
+        </label>
+        <br>
+        <input type="text" value="fo." id="reg" oninput="run()"><br>
+        <p id="regExpError"></p>
+        <!-- 字符串输入框 -->
+        TEST STRING <br>
+
+        <section>
+
+            <!-- spellcheck="false"关闭了拼写检查 -->
+            <textarea id="strInput" onscroll="setScroll()" spellcheck="false" cols="30" rows="10" oninput="run()">hdhfjffoaoijjojdslijgaaafobaasdfsfoc fooooabc
+            foobarbaz j;oajdo adlfjjlf;aiofaoiogag 
+            141154
+            asdfafa
+            foa fob foc
+        </textarea>
+
+            <!-- 高亮的文本，字符串内容与字符串输入框里的一样但匹配字串会高亮，用于定位覆盖字符串输入框 -->
+            <pre id="result"></pre>
+        </section>
+    </div>
+
+    <script>
+        function setScroll() {
+            var scrollTop = strInput.scrollTop
+            result.style.top = -strInput.scrollTop + 'px'
+        }
+
+        function run() {
+            var regSource = reg.value
+            var flags = getFlags()
+            /*下面是以防用户输入错的正则表达式，比如"fo.("，然后程序还给高亮字串
+            正确的行为应该是，输入错误的正则表达式的时候，不给任何的高亮
+            所以使用try...catch，捕获到如果由于错误正则表达式的输入导致regExp没有正确建立的时候，
+            要把返回一个空的result.innerHTML，即使得高亮文本为空*/
+            try {
+                var regExp = new RegExp(regSource, flags)
+                regExpError.innerHTML = '' //没走到catch就把这个文本给清空
+            }
+            catch (e) {
+                console.log(e)
+                regExpError.innerHTML = e.message //走到catch了就打印这个文本（e是系统自带的对象，用来报错的）
+                result.innerHTML = ''
+                return
+            }
+            if (!regSource) { //让没有任何正则表达式输入的时候，高亮文本为空
+                result.innerHTML = ''
+                return
+            }
+            var regExp = new RegExp(regSource, flags)
+            var str = strInput.value
+            var match
+
+            if (regExp.global) { //这儿是正则表达式类型的属性global，写的不是g，别搞错了。。
+                var resultHTML = ''
+                var lastIndex = regExp.lastIndex //一开始的lastIndex为0
+                while (match = regExp.exec(str)) {
+                    resultHTML += str.slice(lastIndex, match.index) //拼接匹配到的字串的前边的字符串
+                    resultHTML += '<em>' + match[0] + '</em>'
+                    lastIndex = regExp.lastIndex
+                    if (match[0] == '') { /*如果输入的是零宽断言，那么会陷入死循环，
+                        因为零宽断言会一直能匹配到，并且lastIndex不会变化，因此需要手动设置lastIndex++*/
+                        regExp.lastIndex++
+                    }
+                }
+                console.log(regExp);
+                console.log(match);
+                resultHTML += str.slice(lastIndex)
+                result.innerHTML = resultHTML
+            } else {  //不带g的情况
+                var resultHTML = ''
+                var lastIndex = regExp.lastIndex
+                match = regExp.exec(str)
+                resultHTML += str.slice(lastIndex, match.index)
+                resultHTML += '<em>' + match[0] + '</em>'
+                resultHTML += str.slice(match[0].length + match.index)
+                //lastIndex在不带g的情况下，是不起作用的，一直都会是0，因此这里要认为设置这里slice的值
+                result.innerHTML = resultHTML
+            }
+
+
+        }
+
+        run()
+
+        function getFlags() {
+            var flags = ""
+            if (i.checked == true) {
+                flags += "i"
+            }
+            if (g.checked == true) {
+                flags += "g"
+            }
+            if (m.checked == true) {
+                flags += "m"
+            }
+            return flags
+        }
+    </script>
+
+
+</body>
+
+</html>
