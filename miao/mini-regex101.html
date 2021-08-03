@@ -12,6 +12,13 @@
             width: 300px;
         }
 
+        section {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
         #strInput {
             font-size: 16px;
             font-family: consola;
@@ -31,15 +38,6 @@
             box-sizing: border-box;
         }
 
-        section {
-            width: 300px;
-            height: 300px;
-            position: relative;
-            overflow: hidden;
-
-        }
-
-
         pre {
             font-size: 16px;
             font-family: consola;
@@ -50,7 +48,7 @@
             padding: 0;
             border: 1px solid;
             position: absolute;
-            top: 65px;
+            top: 1px;
             left: 0px;
             /* 由于重叠了字颜色会深，让字颜色浅一点 */
             color: transparent;
@@ -111,8 +109,8 @@
         <section>
 
             <!-- spellcheck="false"关闭了拼写检查 -->
-            <textarea id="strInput" onscroll="setScroll()" spellcheck="false" cols="30" rows="10" oninput="run()">hdhfjffoaoijjojdslijgaaafobaasdfsfoc fooooabc
-            foobarbaz j;oajdo adlfjjlf;aiofaoiogag 
+            <textarea id="strInput" onscroll="setScroll()" spellcheck="false" cols="30" rows="10" oninput="run()">hdhfjff oaoijjojd slijg aaa foba asd fsfoc foo ooabc
+            foo barbaz j;oajdo adlfjjlf;aiofaoiogag 
             141154
             asdfafa
             foa fob foc
