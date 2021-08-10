@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            position: relative;
+        }
+
+        section {
+            width: 50px;
+            height: 50px;
+            background-color: blueviolet;
+            position: relative;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div style="top: 150px; left:300px;"></div>
+    <section style="top: 100px; left:100px;"></section>
+
+    <script>
+        'use strict'
+        //第一个方块
+        var div = document.querySelector('div')
+        var vx1 = null
+        var vy1 = null
+        var leftPress1 = false
+        var rightPress1 = false
+        var upPress1 = false
+        var downPress1 = false
+
+        document.addEventListener('keydown', function (e) {
+            console.log(e)
+            if (e.key == 'ArrowRight') {
+                vx1 = 1
+                rightPress1 = true
+            }
+            else if (e.key == 'ArrowLeft') {
+                vx1 = -1
+                leftPress1 = true
+            }
+        })
+        document.addEventListener('keyup', function (e) {
+            console.log(e)
+            if (e.key == 'ArrowRight') {
+                rightPress1 = false
+                if (leftPress1) {
+                    vx1 = -1
+                }
+                else {
+                    vx1 = 0
+                }
+            }
+            if (e.key == 'ArrowLeft') {
+                leftPress1 = false
+                if (rightPress1) {
+                    vx1 = 1
+                }
+                else {
+                    vx1 = 0
+                }
+            }
+        })
+        document.addEventListener('keydown', function (e) {
+            console.log(e)
+            if (e.key == 'ArrowDown') {
+                vy1 = 1
+                downPress1 = true
+            }
+            else if (e.key == 'ArrowUp') {
+                vy1 = -1
+                upPress1 = true
+            }
+        })
+        document.addEventListener('keyup', function (e) {
+            console.log(e)
+            if (e.key == 'ArrowDown') {
+                downPress1 = false
+                if (upPress1) {
+                    vy1 = -1
+                }
+                else {
+                    vy1 = 0
+                }
+            }
+            if (e.key == 'ArrowUp') {
+                upPress1 = false
+                if (downPress1) {
+                    vy1 = 1
+                }
+                else {
+                    vy1 = 0
+                }
+            }
+        })
+
+        //第二个方块
+        var section = document.querySelector('section')
+        var vx2 = null
+        var vy2 = null
+        var leftPress2 = false
+        var rightPress2 = false
+        var upPress2 = false
+        var downPress2 = false
+
+        document.addEventListener('keydown', function (e) {
+            console.log(e)
+            if (e.key == 'd') {
+                vx2 = 1
+                rightPress2 = true
+            }
+            else if (e.key == 'a') {
+                vx2 = -1
+                leftPress2 = true
+            }
+        })
+        document.addEventListener('keyup', function (e) {
+            console.log(e)
+            if (e.key == 'd') {
+                rightPress2 = false
+                if (leftPress2) {
+                    vx2 = -1
+                }
+                else {
+                    vx2 = 0
+                }
+            }
+            if (e.key == 'a') {
+                leftPress2 = false
+                if (rightPress2) {
+                    vx2 = 1
+                }
+                else {
+                    vx2 = 0
+                }
+            }
+        })
+        document.addEventListener('keydown', function (e) {
+            console.log(e)
+            if (e.key == 's') {
+                vy2 = 1
+                downPress2 = true
+            }
+            else if (e.key == 'w') {
+                vy2 = -1
+                upPress2 = true
+            }
+        })
+        document.addEventListener('keyup', function (e) {
+            console.log(e)
+            if (e.key == 's') {
+                downPress2 = false
+                if (upPress2) {
+                    vy2 = -1
+                }
+                else {
+                    vy2 = 0
+                }
+            }
+            if (e.key == 'w') {
+                upPress2 = false
+                if (downPress2) {
+                    vy2 = 1
+                }
+                else {
+                    vy2 = 0
+                }
+            }
+        })
+
+        var lastTime = 0
+        requestAnimationFrame(function move(time) {
+            var timeDiff = time - lastTime
+            lastTime = time
+
+            div.style.left = parseFloat(div.style.left) + vx1 * timeDiff * 0.3 + 'px'
+            div.style.top = parseFloat(div.style.top) + vy1 * timeDiff * 0.3 + 'px'
+            section.style.left = parseFloat(section.style.left) + vx2 * timeDiff * 0.3 + 'px'
+            section.style.top = parseFloat(section.style.top) + vy2 * timeDiff * 0.3 + 'px'
+
+            requestAnimationFrame(move)
+        })
+
+        // requestAnimationFrame(function move() {
+
+
+        //     div.style.left = parseFloat(div.style.left) + vx1 * 3 + 'px'
+        //     div.style.top = parseFloat(div.style.top) + vy1 * 3 + 'px'
+
+        //     requestAnimationFrame(move)
+        // })
+
+    </script>
+
+
+</body>
+
+</html>
